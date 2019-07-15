@@ -64,7 +64,7 @@ server.post("/users", async (req, res) => {
     if (name) {
       res
         .status(201)
-        .json({ message: "new account has been created", id: number });
+        .json({ message: "new account has been created", id: id: name[0] });
     } else {
       res.status(400).json({ message: "Account could not be created" });
     }
@@ -79,7 +79,7 @@ server.put("/users/:id", async (req, res) => {
     if (name) {
       res
         .status(200)
-        .json({ message: "Account has been modified", id: number });
+        .json({ message: "Account has been modified", id: name[0] });
     } else {
       res.status(400).json({ message: "Account could not be modified" });
     }
@@ -94,7 +94,7 @@ server.delete("/users/:id", async (req, res) => {
     if (name) {
       res
         .status(200)
-        .json({ message: "Account has been deleted successfully" });
+        .json({ message: "Account has been deleted successfully", id: name[0] });
     } else {
       res.status(400).json({ message: "Account could not be deleted" });
     }
